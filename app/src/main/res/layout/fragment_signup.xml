@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Name Field -->
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="First Name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_corner"
+            android:paddingStart="16sp" />
+
+        <!-- Surname Field -->
+        <EditText
+            android:id="@+id/surnameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Surname"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_corner"
+            android:paddingStart="16sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_corner"
+            android:paddingStart="16sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Date of Birth Field -->
+        <EditText
+            android:id="@+id/dobEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Date of Birth (DD/MM/YYYY)"
+            android:inputType="date"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_corner"
+            android:paddingStart="16sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Mobile Field -->
+        <EditText
+            android:id="@+id/mobileEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_corner"
+            android:paddingStart="16sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:background="@drawable/rounded_corner"
+            android:paddingStart="16sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- Signup Button -->
+        <Button
+            android:id="@+id/signupButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Sign Up"
+            android:backgroundTint="@color/black"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16sp"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

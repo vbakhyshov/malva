@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/login_fragment">
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="thu.malva.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signup_fragment" />
+    </fragment>
+
+    <!-- Signup Fragment -->
+    <fragment
+        android:id="@+id/signup_fragment"
+        android:name="thu.malva.ui.signup.SignupFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_signup">
+        <!-- Action to navigate back to LoginFragment after successful signup -->
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="thu.malva.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <!-- Reservation Fragment -->
+    <fragment
+        android:id="@+id/navigation_reservation"
+        android:name="thu.malva.ui.reservation.ReservationFragment"
+        android:label="@string/title_reservation"
+        tools:layout="@layout/fragment_reservation" />
+
+    <!-- Menu Fragment -->
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="thu.malva.ui.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu" />
+</navigation>

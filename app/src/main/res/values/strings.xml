@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">malva</string>
+    <string name="title_home">Home</string>
+    <string name="title_reservation">Reservation</string>
+    <string name="title_menu">Menu</string>
+    <string name="malva_is_a_fine_dining_restaurant_offering_an_exquisite_blend_of_tradition_and_innovation_in_every_dish_our_chefs_use_the_freshest_highest_quality_ingredients_to_create_culinary_masterpieces_that_delight_the_senses_from_locally_sourced_produce_to_the_finest_international_flavors_malva_provides_a_dining_experience_like_no_other_whether_you_re_here_for_a_casual_meal_or_a_special_occasion_expect_impeccable_service_an_elegant_atmosphere_and_a_journey_through_some_of_the_best_flavors_the_world_has_to_offer">Malva is a fine dining restaurant offering an exquisite blend of tradition and innovation in every dish. Our chefs use the freshest, highest-quality ingredients to create culinary masterpieces that delight the senses. From locally sourced produce to the finest international flavors, Malva provides a dining experience like no other. Whether you\'re here for a casual meal or a special occasion, expect impeccable service, an elegant atmosphere, and a journey through some of the best flavors the world has to offer.</string>
+    <string name="welcome_to_malva">Welcome to Malva</string>
+    <string name="reservation">Reservation</string>
+    <string name="menu">Menu</string>
+</resources>

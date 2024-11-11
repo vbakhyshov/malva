@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EBEBEB"
+        android:backgroundTintMode="src_over"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".ui.home.HomeFragment">
+
+        <TextView
+            android:id="@+id/text_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="Welcome to Malva"
+            android:textColor="#616161"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/sub_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:text="-Vahid Bakhyshov &amp; Jan-Nicolas Vogel-"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/meal_home1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="86dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.15"
+            android:padding="12dp"
+            android:text="We believe food is an art, and we give everyone the right to savor it."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="start"
+            android:padding="12dp"
+            android:text="Where flavor meets artistry."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/meal_home2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="86dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.15"
+            android:padding="12dp"
+            android:text="Our passion is crafting culinary masterpieces, where every bite tells a story of flavor and creativity."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="start"
+            android:padding="12dp"
+            android:text="Art of Dining."
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/meal_home3" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="86dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.15"
+            android:padding="12dp"
+            android:text="Our passion is crafting culinary masterpieces, where every bite tells a story of flavor and creativity."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:gravity="start"
+            android:padding="12dp"
+            android:text="Beauty you can taste."
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="238dp"
+            android:layout_height="169dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_corner"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/munich" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="86dp"
+            android:text=" "
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "80753789946",
+    "project_id": "malva-2024cts",
+    "storage_bucket": "malva-2024cts.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80753789946:android:eeda7dacd6ff376f6bb243",
+        "android_client_info": {
+          "package_name": "thu.malva"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqfaHqHuEGJb42t7GZmQOpWdPhFhX5Hhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80753789946:android:e51456aec3e1f6566bb243",
+        "android_client_info": {
+          "package_name": "thu.malva_rest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqfaHqHuEGJb42t7GZmQOpWdPhFhX5Hhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
