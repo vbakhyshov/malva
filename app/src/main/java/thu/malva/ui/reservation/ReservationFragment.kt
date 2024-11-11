@@ -22,17 +22,14 @@ class ReservationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val reservationViewModel =
-            ViewModelProvider(this).get(ReservationViewModel::class.java)
-
         _binding = FragmentReservationBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val reservationViewModel = ViewModelProvider(this).get(ReservationViewModel::class.java)
 
-        val textView: TextView = binding.textReservation
         reservationViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+            binding.textReservation.text = it
         }
-        return root
+
+        return binding.root
     }
 
     override fun onDestroyView() {

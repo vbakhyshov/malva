@@ -1,22 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.reservation.ReservationFragment">
+    android:fillViewport="true"
+    android:backgroundTintMode="src_over">
 
-    <TextView
-        android:id="@+id/text_reservation"
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        tools:context=".ui.home.HomeFragment">
+
+        <TextView
+            android:id="@+id/textReservation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reservation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Book a Table"
+            android:textSize="24sp"
+            android:textColor="@color/grey"
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_marginTop="36dp"
+            android:fontFamily="sans-serif" />
+
+        <!-- Tables layout -->
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            android:columnCount="4"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true"
+            android:gravity="center">
+
+            <!-- Row 1: Tables -->
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_door"
+                android:contentDescription="Door"
+                />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 2" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 3" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 4" />
+
+            <!-- Row 2: Tables -->
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 21" />
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:textSize="24dp"
+                android:text="1-2"
+                android:fontFamily="serif"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:textSize="16dp"
+                android:text="people"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 24" />
+
+            <!-- Row 3: Tables -->
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 25" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 26" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 27" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="24dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 28" />
+        </GridLayout>
+
+
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:columnCount="8"
+            android:gravity="center"
+            >
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="-5dp"
+
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 52" />
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="-5dp"
+
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 52" />
+
+            <Button
+                android:visibility="invisible"
+                android:layout_margin="-16dp"
+                />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="-5dp"
+
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 52" />
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="-5dp"
+
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 52" />
+
+            <Button
+                android:visibility="invisible"
+                android:layout_margin="-16dp"
+                />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="-5dp"
+
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 52" />
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="-5dp"
+
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 52" />
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For 3-4 people"
+
+            />
+
+
+    </LinearLayout>
+</ScrollView>
