@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:backgroundTintMode="src_over">
 
     <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -18,22 +18,22 @@
             android:id="@+id/textReservation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reservation"
+            android:text="Hello, friend"
             android:layout_marginTop="36dp"
             android:textSize="24sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/grey" />
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Book a Table"
-            android:textSize="24sp"
-            android:textColor="@color/grey"
+            android:text="Select Table"
+            android:textSize="18sp"
+            android:textColor="@color/black"
             android:padding="8dp"
             android:gravity="center"
-            android:layout_marginTop="36dp"
-            android:fontFamily="sans-serif" />
+            android:layout_marginTop="16dp"
+            android:fontFamily="serif" />
 
         <!-- Tables layout -->
         <GridLayout
@@ -41,8 +41,10 @@
             android:layout_height="wrap_content"
             android:rowCount="5"
             android:columnCount="6"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp">
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:background="@drawable/rounded_corner">
 
             <!-- Row 1: Tables -->
             <ImageView
@@ -83,7 +85,6 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_margin="8dp"
-                android:background="@drawable/ic_tablechair_white_24dp"
                 android:visibility="invisible"
                 />
 
@@ -295,20 +296,38 @@
         </GridLayout>
 
         <TextView
-            android:id="@+id/selectedTableTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selected Table: none"
-            android:layout_marginTop="8dp"
+            android:id="@+id/selectedTableTextView"
             android:textSize="18sp"
-            android:textColor="@color/black" />
+            android:fontFamily="serif"
+            android:textColor="@color/black"
+            android:hint="You didn't select a table yet"
+            android:text=""
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            />
 
         <!-- Input Fields for Reservation -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="26dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Some Information"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="serif"
+                android:layout_gravity="center"
+                />
 
             <!-- Number of People Input -->
             <LinearLayout
@@ -316,25 +335,30 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="8dp">
+                android:background="@drawable/rounded_corner"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:padding="8dp"
-                    android:text="Number of People:" />
+                    android:hint="Number of People:"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    />
 
                 <Spinner
                     android:id="@+id/people_count_spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="128dp"
-                    android:textSize="16sp"
-                    android:padding="8dp" />
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_marginStart="72dp"
+                    android:textSize="18sp"
+                    android:padding="8dp"/>
             </LinearLayout>
-
 
             <!-- Date and Time Input -->
             <LinearLayout
@@ -342,19 +366,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="8dp">
+                android:background="@drawable/rounded_corner"
+                android:layout_marginTop="8dp"
+                >
 
                 <TextView
                     android:id="@+id/datetime_input"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:padding="8dp"
-                    android:background="@drawable/rounded_corner"
-                    android:hint="Select Date and Time"
+                    android:fontFamily="serif"
                     android:gravity="center_vertical"
-                    android:textSize="14sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:hint="Select Date and Time"
+                    android:padding="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Preferences Input -->
@@ -371,9 +397,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Write your special requests"
-                    android:textSize="14sp"
-                    android:padding="8dp"
                     android:background="@drawable/rounded_corner"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:fontFamily="serif"
                     />
             </LinearLayout>
 
@@ -385,7 +412,7 @@
                 android:text="Submit Reservation"
                 android:textColor="#FFFFFF"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="8dp" />
         </LinearLayout>
 
     </LinearLayout>

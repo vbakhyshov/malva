@@ -15,6 +15,7 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import com.google.firebase.auth.FirebaseAuth
 import thu.malva.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -25,6 +26,8 @@ class ReservationFragment : Fragment() {
     private var _binding: FragmentReservationBinding? = null
     private val binding get() = _binding!!
     private lateinit var database: DatabaseReference
+
+    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
     private lateinit var dateTimeTextView: TextView
     private lateinit var peopleCountSpinner: Spinner
@@ -71,7 +74,7 @@ class ReservationFragment : Fragment() {
 
     private fun onTableSelected(button: Button) {
         selectedTable = button.contentDescription.toString()
-        binding.selectedTableTextView.text = "Selected Table: $selectedTable"
+        binding.selectedTableTextView.text = "You selected $selectedTable"
 
         val tableNumber = selectedTable?.substringAfter("Table ")?.toIntOrNull()
         if (tableNumber != null) {
