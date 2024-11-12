@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -20,10 +19,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reservation"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            android:layout_marginTop="36dp"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/grey" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,182 +39,354 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rowCount="3"
-            android:columnCount="4"
+            android:rowCount="5"
+            android:columnCount="6"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:alignmentMode="alignMargins"
-            android:useDefaultMargins="true"
-            android:gravity="center">
+            android:layout_marginBottom="16dp">
 
             <!-- Row 1: Tables -->
-            <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
-                android:background="@drawable/ic_door"
-                android:contentDescription="Door"
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_door"
                 />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:id="@+id/table_1"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 2" />
+                android:contentDescription="Table 1"
+                />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:id="@+id/table_2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 3" />
+                android:contentDescription="Table 2"
+                />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:id="@+id/table_3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 4" />
+                android:contentDescription="Table 3"
+                />
+
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:visibility="invisible"
+                />
+
+            <Button
+                android:id="@+id/table_16"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 16"
+                />
 
             <!-- Row 2: Tables -->
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:id="@+id/table_4"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 21" />
-
-            <TextView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
-                android:textSize="24dp"
-                android:text="1-2"
-                android:fontFamily="serif"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                />
-
-            <TextView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
-                android:textSize="16dp"
-                android:text="people"
-                android:layout_gravity="center"
-                android:textAlignment="center"
+                android:contentDescription="Table 4"
                 />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 24" />
+                android:visibility="invisible"
+                />
 
             <!-- Row 3: Tables -->
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:id="@+id/table_5"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 25" />
-
+                android:contentDescription="Table 5"
+                />
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 26" />
-
-            <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
-                android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 27" />
-
-            <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="24dp"
-                android:background="@drawable/ic_tablechair_white_24dp"
-                android:contentDescription="Table 28" />
-        </GridLayout>
-
-
-
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:rowCount="2"
-            android:columnCount="8"
-            android:gravity="center"
-            >
-            <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="-5dp"
-
-                android:background="@drawable/ic_bigtable_white_24dp"
-                android:contentDescription="Table 52" />
-            <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="-5dp"
-
-                android:background="@drawable/ic_bigtable_white_24dp"
-                android:contentDescription="Table 52" />
-
-            <Button
                 android:visibility="invisible"
-                android:layout_margin="-16dp"
                 />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="-5dp"
-
+                android:id="@+id/table_17"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_bigtable_white_24dp"
-                android:contentDescription="Table 52" />
+                android:contentDescription="Table 17"
+                />
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="-5dp"
-
+                android:id="@+id/table_18"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_bigtable_white_24dp"
-                android:contentDescription="Table 52" />
-
-            <Button
-                android:visibility="invisible"
-                android:layout_margin="-16dp"
+                android:contentDescription="Table 18"
                 />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="-5dp"
+                android:id="@+id/table_6"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 6"
+                />
 
-                android:background="@drawable/ic_bigtable_white_24dp"
-                android:contentDescription="Table 52" />
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_margin="-5dp"
+                android:id="@+id/table_7"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 7"
+                />
 
+            <Button
+                android:id="@+id/table_8"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 8"
+                />
+            <Button
+                android:id="@+id/table_9"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 9"
+                />
+
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:visibility="invisible"
+                />
+
+            <Button
+                android:id="@+id/table_19"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/ic_bigtable_white_24dp"
-                android:contentDescription="Table 52" />
+                android:contentDescription="Table 19"
+                />
+            <Button
+                android:id="@+id/table_10"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 10"
+                />
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:visibility="invisible"
+                />
+            <Button
+                android:id="@+id/table_11"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 11"
+                />
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:visibility="invisible"
+                />
+            <Button
+                android:id="@+id/table_20"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 20"
+                />
+            <Button
+                android:id="@+id/table_21"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 21"
+                />
+            <Button
+                android:id="@+id/table_12"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 12"
+                />
+            <Button
+                android:id="@+id/table_13"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 13"
+                />
+            <Button
+                android:id="@+id/table_14"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 14"
+                />
+            <Button
+                android:id="@+id/table_15"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:contentDescription="Table 15"
+                />
+            <Button
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_tablechair_white_24dp"
+                android:visibility="invisible"
+                />
+            <Button
+                android:id="@+id/table_22"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_bigtable_white_24dp"
+                android:contentDescription="Table 22"
+                />
         </GridLayout>
 
         <TextView
+            android:id="@+id/selectedTableTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="For 3-4 people"
+            android:text="Selected Table: none"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
 
-            />
+        <!-- Input Fields for Reservation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
+            <!-- Number of People Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:text="Number of People:" />
+
+                <Spinner
+                    android:id="@+id/people_count_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="128dp"
+                    android:textSize="16sp"
+                    android:padding="8dp" />
+            </LinearLayout>
+
+
+            <!-- Date and Time Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/datetime_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_corner"
+                    android:hint="Select Date and Time"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    android:textColor="?android:attr/textColorPrimary" />
+            </LinearLayout>
+
+            <!-- Preferences Input -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/preferences_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Write your special requests"
+                    android:textSize="14sp"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_corner"
+                    />
+            </LinearLayout>
+
+            <!-- Submit Reservation Button -->
+            <Button
+                android:id="@+id/submit_reservation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Reservation"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
