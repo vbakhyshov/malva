@@ -8,32 +8,35 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import thu.malva.databinding.FragmentReservationBinding
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Context
+import android.content.SharedPreferences
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import com.google.firebase.auth.FirebaseAuth
 import thu.malva.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
 class ReservationFragment : Fragment() {
+    private val GUEST_PREFS = "guestPrefs"
+    private val IS_GUEST = "isGuest"
 
     private var _binding: FragmentReservationBinding? = null
     private val binding get() = _binding!!
     private lateinit var database: DatabaseReference
-
     private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
-
     private lateinit var dateTimeTextView: TextView
     private lateinit var peopleCountSpinner: Spinner
     private val calendar = Calendar.getInstance()
-
     private var selectedTable: String? = null
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,18 +44,49 @@ class ReservationFragment : Fragment() {
     ): View {
         _binding = FragmentReservationBinding.inflate(inflater, container, false)
         database = FirebaseDatabase.getInstance().getReference("Reservations")
+        sharedPreferences = requireActivity().getSharedPreferences(GUEST_PREFS, Context.MODE_PRIVATE)
 
         dateTimeTextView = binding.datetimeInput
         peopleCountSpinner = binding.peopleCountSpinner
 
+        // Check for authentication and guest status
+        if (isUserLoggedIn()) {
+            // Authorized or regular user view
+            setupReservationContent()
+        } else {
+            // Guest view with login prompt
+            setupGuestView()
+        }
+
+        return binding.root
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        // Check if Firebase authentication is available or if the user is not marked as a guest
+        val isGuest = sharedPreferences.getBoolean(IS_GUEST, false)
+        return auth.currentUser != null && !isGuest
+    }
+
+    private fun setupReservationContent() {
+        binding.guestView.visibility = View.GONE
+        binding.bookingContent.visibility = View.VISIBLE
         setupTableSelection()
         setupPeopleCountOptions(1, 2)
 
         binding.submitReservationButton.setOnClickListener {
             submitReservation()
         }
+    }
 
-        return binding.root
+    private fun setupGuestView() {
+        binding.guestView.visibility = View.VISIBLE
+        binding.bookingContent.visibility = View.GONE
+        binding.login2Button.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_reservation_to_login_fragment)
+        }
+        binding.signup2Button.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_reservation_to_signup_fragment)
+        }
     }
 
     private fun setupTableSelection() {
@@ -70,7 +104,6 @@ class ReservationFragment : Fragment() {
             }
         }
     }
-
 
     private fun onTableSelected(button: Button) {
         selectedTable = button.contentDescription.toString()
@@ -102,9 +135,28 @@ class ReservationFragment : Fragment() {
             return
         }
 
-        val reservationId = database.push().key ?: return
-        val reservation = Reservation(selectedTable!!, dateTime, peopleCount, preferences)
+        // Retrieve user information from SharedPreferences
+        val name = sharedPreferences.getString("name", "") ?: ""
+        val surname = sharedPreferences.getString("surname", "") ?: ""
+        val email = sharedPreferences.getString("email", "") ?: ""
+        val mobile = sharedPreferences.getString("mobile", "") ?: ""
+        val dob = sharedPreferences.getString("dob", "") ?: ""
 
+        // Create reservation object with additional user information
+        val reservationId = database.push().key ?: return
+        val reservation = Reservation(
+            table = selectedTable!!,
+            dateTime = dateTime,
+            peopleCount = peopleCount,
+            preferences = preferences,
+            name = name,
+            surname = surname,
+            email = email,
+            mobile = mobile,
+            dob = dob
+        )
+
+        // Save the reservation to the database
         database.child(reservationId).setValue(reservation).addOnCompleteListener {
             if (it.isSuccessful) {
                 Toast.makeText(context, "Reservation submitted", Toast.LENGTH_SHORT).show()
@@ -114,6 +166,7 @@ class ReservationFragment : Fragment() {
             }
         }
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -170,5 +223,10 @@ data class Reservation(
     val table: String = "",
     val dateTime: String = "",
     val peopleCount: String = "",
-    val preferences: String = ""
+    val preferences: String = "",
+    val name: String = "",        // Additional fields
+    val surname: String = "",
+    val email: String = "",
+    val mobile: String = "",
+    val dob: String = ""
 )

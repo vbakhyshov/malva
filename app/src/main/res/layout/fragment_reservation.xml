@@ -11,8 +11,64 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:gravity="center_horizontal"
         tools:context=".ui.home.HomeFragment">
+
+            <!-- Guest View (Visible for unauthenticated users) -->
+            <LinearLayout
+                android:id="@+id/guest_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To reserve a table, you should be authorized."
+                    android:textSize="24sp"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:id="@+id/login2_button"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:gravity="center"
+                    android:fontFamily="serif"
+                    android:textColor="#FFFFFF"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="or"
+                    android:textSize="16dp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/black"
+                    />
+                <Button
+                    android:id="@+id/signup2_button"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sign up"
+                    android:gravity="center"
+                    android:fontFamily="serif"
+                    android:textColor="#FFFFFF"
+                    />
+            </LinearLayout>
+
+        <!-- Booking Content (Visible only for authorized users) -->
+        <LinearLayout
+        android:id="@+id/booking_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
 
         <TextView
             android:id="@+id/textReservation"
@@ -415,5 +471,7 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
+
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -1,18 +1,20 @@
 package thu.malva.ui.login
 
+import android.content.Context
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import thu.malva.R
 import thu.malva.databinding.FragmentLoginBinding
+import android.widget.Toast
+import thu.malva.ui.login.LoginViewModel
 
 class LoginFragment : Fragment() {
 
@@ -20,6 +22,10 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
     private val loginViewModel: LoginViewModel by viewModels()
     private var isPasswordVisible = false
+    private val GUEST_PREFS = "guestPrefs"
+    private val IS_GUEST = "isGuest"
+
+    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,13 +45,17 @@ class LoginFragment : Fragment() {
             togglePasswordVisibility()
         }
 
-        // Handle login button click
+        // Handle regular login button click
         binding.loginButton.setOnClickListener {
             val email = binding.usernameEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
-            binding.progressBar.visibility = View.VISIBLE
-            binding.errorText.visibility = View.GONE
-            loginViewModel.login(email, password)
+            if (email.isNotBlank() && password.isNotBlank()) {
+                binding.progressBar.visibility = View.VISIBLE
+                binding.errorText.visibility = View.GONE
+                loginViewModel.login(email, password)
+            } else {
+                Toast.makeText(context, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Handle sign-up button click
@@ -55,14 +65,22 @@ class LoginFragment : Fragment() {
 
         // Handle guest login button click
         binding.guestLoginButton.setOnClickListener {
+            setGuestLogin()
             findNavController().navigate(R.id.navigation_home)
         }
+    }
+
+    private fun setGuestLogin() {
+        // Set shared preferences to mark the user as a guest
+        val sharedPreferences = requireActivity().getSharedPreferences(GUEST_PREFS, Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean(IS_GUEST, true).apply()
     }
 
     private fun observeViewModel() {
         loginViewModel.loginSuccess.observe(viewLifecycleOwner) { isSuccess ->
             binding.progressBar.visibility = View.GONE
             if (isSuccess) {
+                clearGuestStatus()
                 findNavController().navigate(R.id.navigation_home)
             } else {
                 binding.errorText.visibility = View.VISIBLE
@@ -75,6 +93,12 @@ class LoginFragment : Fragment() {
             binding.errorText.visibility = View.VISIBLE
             Log.e("LoginFragment", "Login failed: $errorMessage")
         }
+    }
+
+    private fun clearGuestStatus() {
+        // Clear guest status on successful login
+        val sharedPreferences = requireActivity().getSharedPreferences(GUEST_PREFS, Context.MODE_PRIVATE)
+        sharedPreferences.edit().putBoolean(IS_GUEST, false).apply()
     }
 
     private fun togglePasswordVisibility() {

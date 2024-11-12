@@ -39,8 +39,15 @@
     <fragment
         android:id="@+id/navigation_reservation"
         android:name="thu.malva.ui.reservation.ReservationFragment"
-        android:label="@string/title_reservation"
-        tools:layout="@layout/fragment_reservation" />
+        android:label="Reservation">
+        <action
+            android:id="@+id/action_navigation_reservation_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <!-- New action to navigate to SignupFragment -->
+        <action
+            android:id="@+id/action_navigation_reservation_to_signup_fragment"
+            app:destination="@id/signup_fragment" />
+    </fragment>
 
     <!-- Menu Fragment -->
     <fragment
