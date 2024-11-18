@@ -19,7 +19,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_centerInParent="true">
+                android:gravity="center_horizontal"
+                android:layout_marginTop="150dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -35,11 +36,11 @@
                     android:id="@+id/login2_button"
                     android:layout_width="128dp"
                     android:layout_height="wrap_content"
-                    android:text="Login"
-                    android:gravity="center"
                     android:fontFamily="serif"
-                    android:textColor="#FFFFFF"
-                    />
+                    android:gravity="center"
+                    android:text="Login"
+                    android:textColor="#FFFFFF" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
