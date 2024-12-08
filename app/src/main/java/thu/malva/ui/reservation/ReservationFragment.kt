@@ -122,6 +122,14 @@ class ReservationFragment : Fragment() {
     }
 
     private fun submitReservation() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val email = currentUser?.email
+
+        if (email == null) {
+            Toast.makeText(context, "Failed to get user email. Please log in again.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val dateTime = dateTimeTextView.text.toString()
         val peopleCount = peopleCountSpinner.selectedItem.toString()
         val preferences = binding.preferencesInput.text.toString()
@@ -132,7 +140,13 @@ class ReservationFragment : Fragment() {
         }
 
         val reservationId = database.push().key ?: return
-        val reservation = Reservation(selectedTable!!, dateTime, peopleCount, preferences)
+        val reservation = Reservation(
+            table = selectedTable!!,
+            dateTime = dateTime,
+            peopleCount = peopleCount,
+            preferences = preferences,
+            email = email // Добавляем email из Firebase Authentication
+        )
 
         database.child(reservationId).setValue(reservation).addOnCompleteListener {
             if (it.isSuccessful) {
@@ -143,6 +157,7 @@ class ReservationFragment : Fragment() {
             }
         }
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -198,5 +213,6 @@ data class Reservation(
     val table: String = "",
     val dateTime: String = "",
     val peopleCount: String = "",
-    val preferences: String = ""
+    val preferences: String = "",
+    val email: String = ""
 )

@@ -22,10 +22,10 @@ class HomeFragment : Fragment() {
 
         // Retrieve the user's name from SharedPreferences
         val sharedPref = requireActivity().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
-        val username = sharedPref.getString("username", "Guest") // Default to "Guest" if not set
+        val username = sharedPref.getString("username", "Guest")
 
         // Set the welcome message with the user's name
-        binding.welcomeText.text = "Welcome to Malva, $username"
+        binding.welcomeText.text = "Welcome to Malva"
 
         return root
     }
